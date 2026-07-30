@@ -1,0 +1,48 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/api/overview
+note: >-
+  Derived from the documented Lua platform API surface (no machine-readable
+  OpenAPI is published; the docs openapi.json is a Mintlify placeholder). Entity
+  set reflects the LuaAgent primitives and runtime APIs.
+entities:
+  - name: Agent
+    description: A deployable AI agent; unified LuaAgent configuration.
+  - name: Skill
+    description: A collection of related tools giving the agent capabilities.
+  - name: Tool
+    description: An individual AI-callable function (LuaTool).
+  - name: Job
+    description: A scheduled task (LuaJob) that runs automatically or dynamically.
+  - name: Webhook
+    description: An HTTP endpoint (LuaWebhook) receiving external events.
+  - name: PreProcessor
+    description: Filters/routes inbound messages before the agent.
+  - name: PostProcessor
+    description: Transforms AI responses before delivery.
+  - name: Channel
+    description: A communication channel (WhatsApp, Slack, Email, Teams, web widget, voice).
+  - name: Device
+    description: A server-defined physical device with commands/triggers.
+  - name: User
+    description: Persistent per-user storage for state, preferences, and custom data.
+  - name: Product
+    description: E-commerce product catalog entry.
+  - name: Basket
+    description: Shopping cart for e-commerce.
+  - name: Order
+    description: Order created and managed for e-commerce.
+  - name: Template
+    description: Reusable message template sent programmatically.
+relationships:
+  - { from: Agent, type: has_many, to: Skill, via: skills }
+  - { from: Skill, type: has_many, to: Tool, via: tools }
+  - { from: Agent, type: has_many, to: Webhook, via: webhooks }
+  - { from: Agent, type: has_many, to: Job, via: jobs }
+  - { from: Agent, type: has_many, to: Channel, via: channels }
+  - { from: Agent, type: has_many, to: PreProcessor, via: preProcessors }
+  - { from: Agent, type: has_many, to: PostProcessor, via: postProcessors }
+  - { from: Agent, type: has_many, to: Device, via: devices }
+  - { from: Basket, type: has_many, to: Product, via: items }
+  - { from: Order, type: belongs_to, to: Basket, via: basket }
+  - { from: Order, type: belongs_to, to: User, via: user }

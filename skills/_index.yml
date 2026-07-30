@@ -1,0 +1,10 @@
+generated: '2026-07-20'
+method: generated
+source: https://docs.heylua.ai/channels/http-api
+skills:
+  - file: lua-global-inc-converse-with-agent.md
+    name: Converse with a Lua agent over the HTTP API
+    api: https://api.heylua.ai
+    operations:
+      - "POST /chat/generate/{agentId}"
+      - "POST /chat/stream/{agentId}"

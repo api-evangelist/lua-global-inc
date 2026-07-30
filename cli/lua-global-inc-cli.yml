@@ -1,0 +1,50 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/cli/overview
+name: lua-cli
+binary: lua
+package: packages/lua-global-inc-packages.yml
+docs: https://docs.heylua.ai/cli/overview
+install:
+  - npm install -g lua-cli
+  - yarn global add lua-cli
+  - pnpm add -g lua-cli
+authentication:
+  docs: https://docs.heylua.ai/cli/authentication
+  methods: [email-otp, api-key]
+  env: LUA_API_KEY
+  credentials_file: ~/.lua-cli/credentials
+commands:
+  - { name: auth, purpose: Manage API keys and authentication }
+  - { name: init, purpose: Initialize a new Lua skill project }
+  - { name: env, purpose: Manage environment variables (sandbox/production) }
+  - { name: persona, purpose: Manage agent persona (sandbox/production) }
+  - { name: features, purpose: Manage agent capabilities and features }
+  - { name: resources, purpose: Manage agent knowledge base }
+  - { name: marketplace, purpose: Discover, install, and publish skills }
+  - { name: skills, purpose: View and manage skills (sandbox/production) }
+  - { name: compile, purpose: Compile skill to deployable format }
+  - { name: sync, purpose: Detect and resolve drift between server and local code }
+  - { name: test, purpose: Test skill tools interactively }
+  - { name: chat, purpose: Interactive chat with your agent }
+  - { name: push, purpose: Push components to server }
+  - { name: deploy, purpose: Deploy any primitive version to production }
+  - { name: mcp, purpose: Manage MCP (Model Context Protocol) servers }
+  - { name: integrations, purpose: Connect third-party accounts via Unified.to }
+  - { name: production, purpose: View and manage production environment }
+  - { name: channels, purpose: Manage communication channels }
+  - { name: webhooks, purpose: View, deploy, activate, and subscribe webhook primitives }
+  - { name: jobs, purpose: View, deploy, activate, trigger, and inspect scheduled jobs }
+  - { name: preprocessors, purpose: Manage message preprocessor versions }
+  - { name: postprocessors, purpose: Manage response postprocessor versions }
+  - { name: devices, purpose: Manage connected IoT/physical devices }
+  - { name: voice, purpose: Test voice agents live in the browser }
+  - { name: source, purpose: List and roll back to past workspace source versions }
+  - { name: models, purpose: List and select the LLM model for your agent }
+  - { name: governance, purpose: Add or remove governance enforcement }
+  - { name: triggers, purpose: Manage integration triggers }
+  - { name: logs, purpose: View and filter agent logs by component type }
+  - { name: status, purpose: Full agent state at a glance }
+  - { name: agents, purpose: List all organizations and agents you have access to }
+  - { name: update, purpose: Update lua-cli to the latest version }
+  - { name: completion, purpose: Generate shell autocomplete scripts }

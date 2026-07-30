@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/channels/http-api
+authentication:
+  style: bearer-token
+  header: "Authorization: Bearer YOUR_API_KEY"
+  ref: authentication/lua-global-inc-authentication.yml
+idempotency:
+  supported: false
+  notes: No idempotency-key header/parameter is documented for the HTTP API.
+pagination:
+  supported: unknown
+  notes: The public HTTP API (chat generate/stream) is not a collection API; no pagination contract documented.
+streaming:
+  supported: true
+  style: server-sent-events
+  operation: POST /chat/stream/:agentId
+  chunk_shape: '{"type":"text-delta","textDelta":"..."} ... {"type":"finish","finishReason":"stop"}'
+request_context:
+  clientContext: "Optional per-request context incl. clientContext.timezone (IANA tz string)."
+  runtimeContext: Optional runtime context object.
+  systemPrompt: Optional per-request system prompt override.
+  query_params:
+    channel: Optional channel context.
+    identifier: Optional caller identifier for tracking/tracing.
+error_envelope:
+  shape: '{"type":"error","message":"...","statusCode":<int>}'
+  ref: errors/lua-global-inc-problem-types.yml
+versioning:
+  ref: lifecycle/lua-global-inc-lifecycle.yml
+  scheme: semver
+rate_limiting:
+  signaling: unknown
+  notes: No rate-limit headers documented for the public HTTP API.
+notes: >-
+  Cross-cutting semantics for the api.heylua.ai HTTP API and the lua-cli SDK.
+  No idempotency contract is published, so no Idempotency pointer is emitted.

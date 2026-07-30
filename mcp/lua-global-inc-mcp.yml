@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://github.com/lua-ai-global/lua-platform-mcp
+server:
+  name: lua-platform-mcp
+  description: >-
+    Read-only MCP server for the Lua AI platform (heylua.ai) — exposes tools
+    that let any MCP-aware client query Lua agent state mid-conversation.
+  transport: stdio
+  install: npx lua-platform-mcp
+  entrypoint: node /absolute/path/to/lua-platform-mcp/dist/server.js
+  repository: https://github.com/lua-ai-global/lua-platform-mcp
+  auth:
+    type: apiKey
+    env: LUA_API_KEY
+    credentials_file: ~/.lua-cli/credentials
+  clients: [Cline, Cursor, Claude Code, Codex CLI, Continue]
+tools:
+  - name: list_agents
+    description: Returns the user's accessible agents with metadata.
+  - name: get_agent
+    description: Retrieves the public configuration for a specific agent.
+  - name: list_primitive_versions
+    description: Lists versions of skills, webhooks, jobs, and other primitives.
+  - name: get_deployment_status
+    description: Reports current production state across all primitive types.
+  - name: tail_logs
+    description: Structured log fetching for an agent.
+notes: >-
+  Official published MCP server (MIT). The platform also ships an in-code
+  LuaMCPServer primitive for connecting EXTERNAL MCP tool servers INTO a Lua
+  agent — a different surface from this read-only platform server.

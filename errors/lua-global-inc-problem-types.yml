@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/channels/http-api
+format: custom-json
+envelope:
+  shape: '{"type":"error","message":"...","statusCode":<int>}'
+  fields:
+    type: constant string "error"
+    message: human-readable error description
+    statusCode: HTTP status code echoed in the body
+scope: api.heylua.ai HTTP API — POST /chat/generate/:agentId and /chat/stream/:agentId
+problems:
+  - status: 400
+    title: Bad Request
+    remediation: Malformed request body or invalid parameters; check the messages array and options.
+  - status: 401
+    title: Unauthorized
+    remediation: Missing or invalid Authorization bearer API key.
+  - status: 423
+    title: Locked
+    remediation: Resource/agent is locked (e.g. deployment or state lock); retry once unlocked.
+  - status: 500
+    title: Internal Server Error
+    remediation: Server-side failure; retry with backoff and contact support if persistent.
+notes: >-
+  Lua does not use RFC 9457 application/problem+json — it returns a custom
+  {type,message,statusCode} envelope. Streaming errors arrive as an SSE chunk
+  of the same shape ({"type":"error",...}). Statuses captured from the HTTP API
+  docs and changelog examples; no published OpenAPI response catalog exists.

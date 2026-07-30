@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/overview/webhooks
+spec_type: Webhooks
+summary: >-
+  Lua agents receive external events via LuaWebhook HTTP endpoints and can
+  subscribe to platform channel-status events. No AsyncAPI document is
+  published; this captures the documented webhook surface.
+definition:
+  primitive: LuaWebhook
+  fields: [name, description, execute]
+  model: >-
+    Inbound HTTP POST from an external service to the webhook URL; the async
+    execute(event) handler reads event.body and acts (update records, notify
+    users, trigger jobs). Runs outside conversational context.
+delivery_urls:
+  - "https://webhook.heylua.ai/{agentId}/{webhookId}"
+  - "https://webhook.heylua.ai/{agentId}/{webhook-name}"
+platform_events:
+  channel: whatsapp
+  subscribe_via: "lua webhooks subscribe --webhook-name <name> --event <event-type>"
+  events:
+    - { name: message.sent, description: Message was sent to recipient }
+    - { name: message.delivered, description: Message delivered to device }
+    - { name: message.read, description: Recipient read the message }
+    - { name: message.failed, description: Message failed to send }
+    - { name: message.played, description: Recipient played a voice/video message }
+notes: >-
+  Signature-verification specifics are not detailed in the public docs.
+  Proactive/agent-initiated outbound messaging is handled by the Channels API,
+  not webhooks.

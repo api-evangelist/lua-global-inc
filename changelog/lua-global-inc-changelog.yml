@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/changelog
+subject: lua-cli
+scheme: semver
+current_version: 3.19.0
+notes: >-
+  Dated release notes for the lua-cli / Lua platform. Recent window captured
+  below; the live changelog is the source of truth for full history.
+entries:
+  - version: 3.19.0
+    date: 2026-07-03
+    highlights:
+      - Per-request timezone (clientContext.timezone, IANA) on chat requests
+      - Per-agent reasoning effort via LuaAgent modelSettings.reasoning
+      - Team.findMember() to reach a teammate without their number
+      - Browser switch on LuaAgent to give an agent a browser
+  - version: 3.18.0
+    date: 2026-06-22
+    highlights:
+      - Channels API for agent-initiated (proactive) messaging
+  - version: 3.17.2
+    date: 2026-06-01
+  - version: 3.17.1
+    date: 2026-05-29
+  - version: 3.16.0
+    date: 2026-05-19
+  - version: 3.15.3
+    date: 2026-05-12
+  - version: 3.15.0
+    date: 2026-05-06
+  - version: 3.14.0
+    date: 2026-05-05
+  - version: 3.13.0
+    date: 2026-04-29

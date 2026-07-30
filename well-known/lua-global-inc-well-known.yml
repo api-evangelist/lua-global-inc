@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://heylua.ai/.well-known/security.txt
+host: https://heylua.ai
+documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: lua-global-inc-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: >-
+  Only the RFC 9116 security.txt is published. It points to a security contact
+  (security@heylua.ai), an encryption PGP key, a disclosure policy on the Lua
+  trust center, and a security hall-of-fame.

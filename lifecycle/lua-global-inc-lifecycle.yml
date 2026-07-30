@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/changelog
+versioning:
+  scheme: semver
+  current: 3.19.0
+  surface: lua-cli / platform (npm dist-tags)
+  docs: https://docs.heylua.ai/changelog
+  primitive_versioning: >-
+    Platform primitives (skills, webhooks, jobs, processors) are independently
+    versioned and deployed to production via `lua deploy`; `lua source` can roll
+    back to past workspace source versions.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal RFC 8594 Sunset/Deprecation-header policy found in the docs.
+sla:
+  url: null
+status_page: https://status.heylua.ai
+deprecated_operations: []
+notes: >-
+  Status page live at status.heylua.ai (HTTP 200). Release cadence is frequent
+  (multiple minor releases per month across April–July 2026).

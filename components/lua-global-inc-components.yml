@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.heylua.ai/chat-widget/introduction
+families:
+  - name: LuaPop
+    kind: embeddable-chat-widget
+    description: >-
+      Embeddable AI chat widget ("Lua Pop") that drops the Lua agent onto any
+      website or app, with configuration, events/callbacks, styling, voice chat,
+      and framework integrations (React, Vue, Angular).
+    docs: https://docs.heylua.ai/chat-widget/introduction
+    quick_start: https://docs.heylua.ai/chat-widget/quick-start
+    capabilities:
+      - configuration reference (LuaPop options)
+      - events & callbacks API
+      - styling & brand customization
+      - voice chat
+      - framework integration (React/Vue/Angular)
+      - analytics & tracking
+    migration_from: [Intercom, Zendesk, Drift]
+notes: >-
+  Client-side/embeddable UI surface, distinct from the server-side TypeScript
+  SDK in packages/. Loader/install detail lives in the chat-widget/installation
+  docs.

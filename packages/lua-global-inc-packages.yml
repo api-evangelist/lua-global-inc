@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/package/lua-cli
+packages:
+  - language: javascript
+    registry: npm
+    name: lua-cli
+    url: https://www.npmjs.com/package/lua-cli
+    install: npm install -g lua-cli
+    version: 3.18.0
+    official: true
+    description: >-
+      Build, test, and deploy AI agents with custom tools, webhooks, and
+      scheduled jobs. Provides LuaAgent unified configuration, streaming chat,
+      and batch deployment. Doubles as the platform CLI and the TypeScript SDK
+      (LuaAgent/LuaSkill/LuaTool/LuaJob/LuaWebhook and the runtime APIs).
+    repository: https://github.com/lua-ai-global/lua-core-services
+  - language: javascript
+    registry: npm
+    name: "@lua-ai-global/device-client"
+    url: https://www.npmjs.com/package/@lua-ai-global/device-client
+    install: npm install @lua-ai-global/device-client
+    version: 1.0.0
+    official: true
+    description: >-
+      Connect physical devices to Lua AI agents. Supports Socket.IO and MQTT
+      transports, self-describing commands, triggers, and CDN uploads.
+    repository: https://github.com/lua-ai-global/lua-core-services
+notes: >-
+  Both libraries are first-party (published from the lua-ai-global GitHub org,
+  monorepo lua-core-services). No first-party Python/Java/Go/Ruby/PHP/Rust
+  client was found on PyPI, Maven Central, pkg.go.dev, RubyGems, Packagist, or
+  crates.io — Lua ships a TypeScript-first SDK/CLI.

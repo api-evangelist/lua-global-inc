@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: derived
+source: docs.heylua.ai (HTTP API, MCP, auth, webhooks)
+standards:
+  - id: mcp
+    conforms: true
+    evidence: >-
+      Official read-only Model Context Protocol server (lua-platform-mcp)
+      exposing 5 tools; LuaMCPServer primitive connects external MCP servers.
+  - id: sse
+    conforms: true
+    evidence: POST /chat/stream/:agentId streams responses as Server-Sent Events.
+  - id: bearer-token-auth
+    conforms: true
+    evidence: HTTP API requires Authorization Bearer API key.
+  - id: oauth2
+    conforms: false
+  - id: openid-connect
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a custom {type,message,statusCode} envelope, not application/problem+json.
+  - id: rfc9116-security-txt
+    conforms: true
+    evidence: /.well-known/security.txt published (HTTP 200).
+  - id: fhir
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: scim
+    conforms: false
+notes: >-
+  Derived from documented behavior. Lua publishes a trust center
+  (trust.heylua.ai) with a vulnerability-disclosure policy but no named
+  third-party certifications (SOC 2 / ISO 27001 / PCI / HIPAA / FedRAMP) were
+  found, so no Compliance pointer is asserted.

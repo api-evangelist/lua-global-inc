@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: heylua.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  5 16:21:53 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: docs.heylua.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  5 16:21:53 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.heylua.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  5 16:21:53 2026 GMT
+  hsts: null
+domains:
+- domain: heylua.ai
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
