@@ -2,7 +2,11 @@ generated: '2026-07-20'
 method: searched
 source: https://heylua.ai/.well-known/security.txt
 host: https://heylua.ai
-documents:
+notes: Only the RFC 9116 security.txt is published. It points to a security contact (security@heylua.ai),
+  an encryption PGP key, a disclosure policy on the Lua trust center, and a security hall-of-fame.
+hosts:
+- host: https://heylua.ai
+  documents:
   - path: /.well-known/security.txt
     status: 200
     file: lua-global-inc-security.txt
@@ -14,7 +18,8 @@ documents:
     status: 404
   - path: /.well-known/ai-plugin.json
     status: 404
-notes: >-
-  Only the RFC 9116 security.txt is published. It points to a security contact
-  (security@heylua.ai), an encryption PGP key, a disclosure policy on the Lua
-  trust center, and a security hall-of-fame.
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
