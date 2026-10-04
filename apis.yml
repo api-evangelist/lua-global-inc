@@ -24,7 +24,7 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lua-global-inc.png
-name: Lua Global Inc
+name: Lua AI
 description: >-
   Lua (heylua.ai), operated by Lua Global Inc, is a Y Combinator-backed "Agent
   OS" platform for building, testing, deploying, and governing enterprise AI
@@ -47,6 +47,9 @@ x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-20'
+x-docs-platform: mintlify
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
 - Company
 - Artificial Intelligence
@@ -151,3 +154,4 @@ common:
   url: data-model/lua-global-inc-data-model.yml
 - type: Webhooks
   url: asyncapi/lua-global-inc-webhooks.yml
+x-legal-name: Lua Global Inc
