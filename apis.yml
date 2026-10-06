@@ -46,7 +46,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 x-docs-platform: mintlify
 x-docs-platform-confidence: medium
 x-docs-platform-checked: 2026-10-03
@@ -98,6 +98,8 @@ x-enrichment:
   artifacts_added: 19
   pass: local-v1
 common:
+- url: https://blog.heylua.ai/rss/
+  type: BlogRSS
 - type: VulnerabilityDisclosure
   url: security/lua-global-inc-vulnerability-disclosure.yml
 - type: Security
